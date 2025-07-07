@@ -1,0 +1,14 @@
+*.pdf
+**/__pycache__
+*.txt
+*.csv
+selenium
+*.joblib
+*.xlsx
+plots
+*.zip
+*.sif
+*.png
+*tar.gz
+.venv
+.DS_Store

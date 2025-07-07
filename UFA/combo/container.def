@@ -1,0 +1,23 @@
+Bootstrap: docker
+From: python:3.10.12
+
+%environment
+    export PYTHONPATH=.
+
+%post
+    export DEBIAN_FRONTEND=noninteractive
+
+    # Update package list
+    apt-get -y update
+
+    # Install necessary packages
+    apt-get -y install python3-pip python3-dev g++ gcc build-essential
+
+    # Upgrade pip
+    python3 -m pip install --upgrade pip
+
+    # Install Python packages
+    python3 -m pip install pandas numpy matplotlib 
+    python3 -m pip install requests==2.31.0 torch==2.1.0 torchdata==0.7.1
+    python3 -m pip install --index-url https://pypi.clarin-pl.eu/ lambo
+    python3 -m pip install --index-url https://pypi.clarin-pl.eu/ combo==3.3.0
